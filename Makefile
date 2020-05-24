@@ -11,4 +11,10 @@ up:
 	docker-compose up
 
 down:
-	docker-compose down
+	docker-compose down -v
+
+migrations:
+	docker-compose run --rm app sh -c "python manage.py makemigrations"
+
+migrations-core:
+	docker-compose run --rm app sh -c "python manage.py makemigrations core"
