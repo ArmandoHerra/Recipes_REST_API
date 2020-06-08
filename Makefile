@@ -1,5 +1,5 @@
 build:
-	docker-compose build
+	docker-compose build --no-cache --force-rm
 
 test:
 	docker-compose run --rm app sh -c "python manage.py test && flake8"
